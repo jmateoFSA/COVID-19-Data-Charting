@@ -8,7 +8,7 @@ function App() {
   const data = {
     labels: ['State A', 'State B', 'State C', 'State D', 'State E'],
     datasets: [{
-        label: 'Number of Cases Per State',
+        label: 'COVID-19 Cases Per State',
         data: [200, 400, 500, 1000, 2000],
         backgroundColor: [
             'rgba(255, 99, 132, 0.4)',
