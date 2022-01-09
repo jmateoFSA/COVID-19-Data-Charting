@@ -1,7 +1,10 @@
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Bar } from 'react-chartjs-2'
 import Chart from 'chart.js/auto'
+import { useDispatch, useSelector } from "react-redux";
+import { getStatesData } from './actions/statesAction';
 
 function App() {
   //hardcoded placeholder to start with
