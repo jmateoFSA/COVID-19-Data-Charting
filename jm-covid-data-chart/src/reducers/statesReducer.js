@@ -1,4 +1,11 @@
-const statesReducer = (state = [], action) => {
+const initialState = {
+  loading: false,
+  error: false,
+  stateNames: [],
+  stateCases: []
+}
+
+const statesReducer = (state = initialState, action) => {
   const {type, payload} = action;
 
   switch (type) {
@@ -11,6 +18,14 @@ const statesReducer = (state = [], action) => {
       return {
         ...state,
         loading: false,
+        stateNames: payload.stateNames,
+        stateCases: payload.stateCases
+      }
+    case "ERROR":
+      return {
+        ...state,
+        loading: false,
+        error: true
       }
     default:
       return state;
