@@ -1,5 +1,5 @@
 const initialState = {
-  loading: false,
+  loading: true,
   error: false,
   stateNames: [],
   stateCases: []
@@ -9,11 +9,6 @@ const statesReducer = (state = initialState, action) => {
   const {type, payload} = action;
 
   switch (type) {
-    case "WAITING":
-      return {
-        ...state,
-        loading: true
-      }
     case "GOT_DATA":
       return {
         ...state,

@@ -30,6 +30,8 @@ function App() {
 }
   return (
     <div className="App">
+      {loading && <p>Loading Data...</p>}
+      {error && <p>An Error Occurred...</p>}
       <Bar data={data} />
     </div>
   );
