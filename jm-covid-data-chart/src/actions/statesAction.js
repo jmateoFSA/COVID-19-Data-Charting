@@ -7,8 +7,8 @@ export const getStatesData = () => async dispatch => {
     const stateNames = [];
     const stateCases = [];
 
-    response.casesByState.map(x => stateNames.push(x.name))
-    response.casesByState.map(x => stateCases.push(x.casesReported))
+    response.data.casesByState.map(x => stateNames.push(x.name))
+    response.data.casesByState.map(x => stateCases.push(x.casesReported))
 
     dispatch({
       type: "GOT_DATA",

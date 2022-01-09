@@ -7,12 +7,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { getStatesData } from './actions/statesAction';
 
 function App() {
-  //hardcoded placeholder to start with
+  const dispatch = useDispatch();
+  const state = useSelector(state => state.statesData)
+  const { loading, error, stateNames, stateCases } = state
+  useEffect(() => {
+    dispatch(getStatesData())
+  }, [dispatch])
+
   const data = {
-    labels: ['State A', 'State B', 'State C', 'State D', 'State E'],
+    labels: stateNames,
     datasets: [{
         label: 'COVID-19 Cases Per State',
-        data: [200, 400, 500, 1000, 2000],
+        data: stateCases,
         backgroundColor: [
             'rgba(255, 99, 132, 0.4)',
         ],
